@@ -1,0 +1,15 @@
+﻿@model List<DiemCachLyModel>
+@{
+    ViewData["title"] = "Liệt kê tên địa điểm cách ly";
+}
+<form action="/" method="post">
+    
+    <select name="madiemcachly">
+        @foreach (var item in Model)
+        {
+            <option value="@item.MaDiemCachLy">@item.TenDiemCachLy</option>
+        }
+    </select><br />
+             <input type="submit" name="submit" value="Liệt kê" />
+
+</form>
