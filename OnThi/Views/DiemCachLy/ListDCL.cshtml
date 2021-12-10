@@ -2,9 +2,9 @@
 @{
     ViewData["title"] = "Liệt kê tên địa điểm cách ly";
 }
-<form action="/" method="post">
+<form action="/CongNhan/LietKeCNtheoDCL" method="post">
     
-    <select name="madiemcachly">
+    <select name="madiemcachly" id="madiemcachly">
         @foreach (var item in Model)
         {
             <option value="@item.MaDiemCachLy">@item.TenDiemCachLy</option>

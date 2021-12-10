@@ -9,7 +9,7 @@ namespace OnThi.Controllers
 {
     public class CongNhanController : Controller
     {
-        public IActionResult LietKeCNtheoSoLan()
+        public IActionResult Index()
         {
             return View();
         }
@@ -17,6 +17,12 @@ namespace OnThi.Controllers
         {
             DataContext context = HttpContext.RequestServices.GetService(typeof(DataContext)) as DataContext;
             return View(context.sqlListCNbyNum(soTC));
+        }
+
+        public IActionResult LietKeCNtheoDCL(string madiemcachly)
+        {
+            DataContext context = HttpContext.RequestServices.GetService(typeof(DataContext)) as DataContext;
+            return View( context.sqlLietKeCNtheoDCL(madiemcachly));
         }
 
     }

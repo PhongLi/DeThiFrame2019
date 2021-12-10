@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\CNCL\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
 
 </Project>

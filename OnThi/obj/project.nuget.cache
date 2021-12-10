@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c3LYLpE110YJHEQzJz+0H9sYsDDWfshK2h3ITA9GD9/+qUOzVWyKPVnk7wo0eatuDd92tlHsbZ/Q5misHuuWvA==",
+  "dgSpecHash": "k1swL4gJCfNw1FhzGfSS+Oa88rp4zcntThtZ4JIoaRpqHyIUCRh1+lSBnAcm7jmHX+NFW40WtGGoZe74l4snIw==",
   "success": true,
-  "projectFilePath": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\OnThi\\OnThi.csproj",
+  "projectFilePath": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\Onthi\\OnThi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -1,0 +1,29 @@
+﻿@model List<CongNhanModel>
+
+@{
+
+}
+<table border="1">
+
+    <tr>
+        <th>Mã công nhân</th>
+        <th>Tên công nhân</th>
+        <th>Chức năng</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.MaCongNhan
+            </td>
+            <td>
+                @item.TenCongNhan
+            </td>
+            <td>
+                <a href="DeleteThietBi?MaNV=@item.MaCongNhan">Xóa</a>
+                <a href="ViewThietBi?MaNV=@item.MaCongNhan">View</a>
+            </td>
+
+        </tr>
+    }
+</table>

@@ -92,5 +92,35 @@ namespace OnThi.Models
             }
             return list;
         }
+
+        public List<CongNhanModel> sqlLietKeCNtheoDCL( string mdcl)
+        {
+            List<CongNhanModel> list = new List<CongNhanModel>();
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                var str = @"select * from CONGNHAN where MaDiemCachLy = @MaDCL";
+                SqlCommand cmd = new SqlCommand(str, conn);
+                cmd.Parameters.AddWithValue("MaDCL", mdcl);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        list.Add(new CongNhanModel()
+                        {
+                            MaCongNhan = reader["MaCongNhan"].ToString(),
+                            TenCongNhan = reader["TenCongNhan"].ToString(),
+                            GioiTinh = Convert.ToBoolean(reader["GioiTinh"]),
+                            NamSinh = Convert.ToInt32(reader["NamSinh"]),
+                            NuocVe = reader["NuocVe"].ToString(),
+                            MaDiemCachLy = reader["MaDiemCachLy"].ToString()
+                        });
+                    }
+                    reader.Close();
+                }
+                conn.Close();
+            }
+            return list;
+        }
     }
 }

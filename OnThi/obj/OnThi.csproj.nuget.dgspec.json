@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\OnThi\\OnThi.csproj": {}
+    "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\Onthi\\OnThi.csproj": {}
   },
   "projects": {
-    "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\OnThi\\OnThi.csproj": {
+    "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\Onthi\\OnThi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\OnThi\\OnThi.csproj",
+        "projectUniqueName": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\Onthi\\OnThi.csproj",
         "projectName": "OnThi",
-        "projectPath": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\OnThi\\OnThi.csproj",
+        "projectPath": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\Onthi\\OnThi.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\OnThi\\obj\\",
+        "outputPath": "E:\\UNIVERSITY\\Nam3\\framework\\Thuchanh\\OnThi\\Onthi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",

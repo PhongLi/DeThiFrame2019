@@ -48,3 +48,4 @@ E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi\obj\Debug\net5.0\OnThi.dll
 E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi\obj\Debug\net5.0\ref\OnThi.dll
 E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi\obj\Debug\net5.0\OnThi.pdb
 E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi\obj\Debug\net5.0\OnThi.genruntimeconfig.cache
+E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\Onthi\obj\Debug\net5.0\Razor\Views\CongNhan\LietKeCNtheoDCL.cshtml.g.cs
