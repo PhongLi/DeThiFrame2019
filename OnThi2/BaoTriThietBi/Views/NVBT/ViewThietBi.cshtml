@@ -1,0 +1,16 @@
+﻿@model BaoTriThietBi.Models.NVBTModel
+
+@{
+
+}
+
+<h2>Udate</h2>
+
+
+<form action="/" method="post">
+    <label for="maThietBi">Mã thiết bị</label> <input type="text" name="maThietBi" value="@Model.MaThietBi" /><br>
+    <label for="macanHo">Mã căn hộ</label> <input type="text" name="macanHo" value="@Model.MaCanHo" /><br>
+    <label for="LanThu">Lần sửa</label> <input type="text" name="LanThu" value="@Model.LanThu" /><br>
+    <label for="NgayBaoTri">Ngày bảo trì</label> <input type="date" name="NgayBaoTri" value="@Model.NgayBaoTri" /><br>
+    <input type="submit" name="submit" value="Update" />
+</form>

@@ -1,0 +1,17 @@
+﻿@model List<BaoTriThietBi.Models.NhanVienModel>
+
+@{ 
+    ViewData["title"] = "Liệt kê nhân viên";
+}
+
+<form action="/NVBT/LietKeTBtheoNV" method="post">
+    <select name="MaNhanVien" , id="MaNhanVien">
+        @foreach (var item in Model)
+        {
+            <option value="@item.MaNhanVien">@item.TenNhanVien</option>
+        }
+
+    </select><br />
+             <input type="submit" name="submit" value="Liệt Kê" id="submit"/>
+
+</form>
