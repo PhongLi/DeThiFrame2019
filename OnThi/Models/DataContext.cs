@@ -39,7 +39,7 @@ namespace OnThi.Models
         public List<object> sqlListCNbyNum(int soTC)
         {
             List<object> list = new List<object>();
-            using(SqlConnection conn =  GetConnection())
+            using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
                 var str = @"Select CN.TenCongNhan, CN.NamSinh, CN.NuocVe ,Count(*) AS SoTC
@@ -49,7 +49,7 @@ namespace OnThi.Models
                             Having count(*) >= @SoTCinput";
                 SqlCommand cmd = new SqlCommand(str, conn);
                 cmd.Parameters.AddWithValue("SoTCinput", soTC);
-                using(var reader = cmd.ExecuteReader())
+                using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
@@ -59,7 +59,7 @@ namespace OnThi.Models
                             NamSinh = Convert.ToInt32(reader["NamSinh"]),
                             Nuocve = reader["NuocVe"].ToString(),
                             SoTC = Convert.ToInt32(reader["SoTC"])
-                        }); 
+                        });
                     }
                     reader.Close();
                 }
@@ -71,7 +71,7 @@ namespace OnThi.Models
         public List<DiemCachLyModel> sqlListDCL()
         {
             List<DiemCachLyModel> list = new List<DiemCachLyModel>();
-            using(SqlConnection conn = GetConnection())
+            using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
                 var str = @"select * from DIEMCACHLY";
@@ -80,7 +80,8 @@ namespace OnThi.Models
                 {
                     while (reader.Read())
                     {
-                        list.Add(new DiemCachLyModel() {
+                        list.Add(new DiemCachLyModel()
+                        {
                             MaDiemCachLy = reader["MaDiemCachLy"].ToString(),
                             TenDiemCachLy = reader["TenDiemCachLy"].ToString(),
                             DiaChi = reader["DiaChi"].ToString()
@@ -93,7 +94,7 @@ namespace OnThi.Models
             return list;
         }
 
-        public List<CongNhanModel> sqlLietKeCNtheoDCL( string mdcl)
+        public List<CongNhanModel> sqlLietKeCNtheoDCL(string mdcl)
         {
             List<CongNhanModel> list = new List<CongNhanModel>();
             using (SqlConnection conn = GetConnection())
@@ -122,5 +123,42 @@ namespace OnThi.Models
             }
             return list;
         }
+        public CongNhanModel sqlViewInfoCN(string MaCongNhan)
+        {
+            CongNhanModel CN = new CongNhanModel();
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                var str = @"select * from CONGNHAN where MaCongNhan = @MaCN";
+                SqlCommand cmd = new SqlCommand(str, conn);
+                cmd.Parameters.AddWithValue("MaCN", MaCongNhan);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    CN.MaCongNhan = reader["MaCongNhan"].ToString();
+                    CN.TenCongNhan = reader["TenCongNhan"].ToString();
+                    CN.GioiTinh = Convert.ToBoolean(reader["GioiTinh"]);
+                    CN.NamSinh = Convert.ToInt32(reader["NamSinh"]);
+                    CN.NuocVe = reader["NuocVe"].ToString();
+                    CN.MaDiemCachLy = reader["MaDiemCachLy"].ToString();
+                }
+                conn.Close();
+            }
+            return CN;
+
+        }
+
+        public int sqlXoaCN(string MaCongNhan)
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                var str = @"delete from CongNhan where MaCongNhan = @MaCN";
+                SqlCommand cmd = new SqlCommand(str, conn);
+                cmd.Parameters.AddWithValue("MaCN", MaCongNhan);               
+                return (cmd.ExecuteNonQuery());
+            }
+        }
+
     }
 }

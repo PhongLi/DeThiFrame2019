@@ -1,0 +1,25 @@
+﻿@model OnThi.Models.CongNhanModel
+
+@{
+
+}
+
+<h2>View</h2>
+
+
+<form>
+    <label>Mã công nhân</label> <input type="text" name="maCN" value="@Model.MaCongNhan" disabled /><br>
+    <label>Tên công nhân</label> <input type="text" name="tenCN" value="@Model.TenCongNhan" disabled /><br>
+    <label>Giới tính</label>
+    @if (@Model.GioiTinh == true)
+    {
+        <input type="checkbox" checked disabled /><br>
+    }
+    else
+    {
+        <input type="checkbox" disabled /><br>
+    }
+    <label>Năm sinh</label> <input type="text" name="Namsinh" value="@Model.NamSinh" disabled /><br>
+    <label>Nước về</label> <input type="text" name="Nuocve" value="@Model.NuocVe" disabled /><br>
+
+</form>

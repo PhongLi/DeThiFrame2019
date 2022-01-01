@@ -13,6 +13,10 @@ namespace OnThi.Controllers
         {
             return View();
         }
+        public IActionResult LietKeCNtheoSoLan()
+        {
+            return View();
+        }
         public IActionResult ListCNByNum(int soTC)
         {
             DataContext context = HttpContext.RequestServices.GetService(typeof(DataContext)) as DataContext;
@@ -25,5 +29,17 @@ namespace OnThi.Controllers
             return View( context.sqlLietKeCNtheoDCL(madiemcachly));
         }
 
+        public IActionResult ViewInfoCN(string MaCN)
+        {
+            DataContext context = HttpContext.RequestServices.GetService(typeof(DataContext)) as DataContext;
+            return View(context.sqlViewInfoCN(MaCN));
+        }
+
+        public IActionResult XoaCN(string MaCN)
+        {
+            DataContext context = HttpContext.RequestServices.GetService(typeof(DataContext)) as DataContext;
+            context.sqlXoaCN(MaCN);
+            return RedirectToAction("ListDCL");
+        }
     }
 }
