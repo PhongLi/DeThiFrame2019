@@ -1,0 +1,11 @@
+﻿@model BaoDuongModel
+
+
+<form action="/BaoDuong/updateBD" method="post">
+    Ngày giờ nhận xe <input type="date" name="Ngaygionhan" value="@Model.NGAYGIONHAN" disabled/> <br />
+    Ngày giờ trả xe <input type="date" name="Ngaygiotra" value="@Model.NGAYGIOTRA" /><br />
+    Nội dung <input type="text" name="noidung" value="@Model.NOIDUNG" disabled/><br />
+    Số km <input type="text" name="sokm" value="@Model.SOKM" disabled/><br />
+    <input type="hidden" name="MABD" value="@Model.MABD" />
+    <input type="submit" value="cập nhật" name="submit" />
+</form>

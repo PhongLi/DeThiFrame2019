@@ -13,10 +13,10 @@
     {
         <tr>
             <td>
-                Ngày nhận xe <input type="date" name="NGAYGIONHAN" value="@item.GetType().GetProperty("NGAYGIONHAN").GetValue(item, null)" />               
+                Ngày nhận xe <input type="date" name="NGAYGIONHAN" value="@item.GetType().GetProperty("NGAYGIONHAN").GetValue(item)" />               
             </td>
             <td>
-                Ngày trả xe <input type="date" name="NGAYGIOTRA" value="@item.GetType().GetProperty("NGAYGIOTRA").GetValue(item, null)" />
+                Ngày trả xe <input type="date" name="NGAYGIOTRA" value="@item.GetType().GetProperty("NGAYGIOTRA").GetValue(item)" />
             </td>
         </tr>
         break;
@@ -48,7 +48,7 @@
                 @item.GetType().GetProperty("DONGIA").GetValue(item, null)
             </td>
             <td>
-                <a href="">Xóa</a>
+                <a href="DeleteCTBD?MABD=@item.GetType().GetProperty("MABD").GetValue(item, null)&MACV=@item.GetType().GetProperty("MACV").GetValue(item, null)">Xóa</a>
             </td>
         </tr>
 

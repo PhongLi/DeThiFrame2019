@@ -97,5 +97,53 @@ namespace OnThi3.Models
             return list;
         }
 
+        public BaoDuongModel sqlEditInfoBD(string MABD)
+        {
+            BaoDuongModel bd = new BaoDuongModel();
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                var str = @"select * from BAODUONG where MABD = @mabd";
+                SqlCommand cmd = new SqlCommand(str, conn);
+                cmd.Parameters.AddWithValue("mabd", MABD);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    bd.NGAYGIONHAN = reader["NGAYGIONHAN"].ToString();
+                    bd.NGAYGIOTRA = reader["NGAYGIOTRA"].ToString();
+                    bd.MABD = reader["MABD"].ToString();
+                    bd.SOKM = Convert.ToInt32(reader["SOKM"]);
+                    bd.NOIDUNG = reader["NOIDUNG"].ToString();
+                    bd.SOXE = reader["SOXE"].ToString();
+                }
+            }
+            return bd;
+        }
+
+        public int sqlDeleteCTBD(string mabd, string macv)
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                var str = @"delete from CT_BD where MABD=@mabd and MACV=@macv";
+                SqlCommand cmd = new SqlCommand(str, conn);
+                cmd.Parameters.AddWithValue("mabd", mabd);
+                cmd.Parameters.AddWithValue("macv", macv);
+                return (cmd.ExecuteNonQuery());
+            }
+        }
+        public int sqlupdateBD(string mabd, string Ngaygiotra)
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                var str = @"update BAODUONG set NGAYGIOTRA = @Ngaygiotra where MABD= @mabd";
+                SqlCommand cmd = new SqlCommand(str, conn);
+                cmd.Parameters.AddWithValue("mabd", mabd);
+                cmd.Parameters.AddWithValue("Ngaygiotra", Ngaygiotra);
+                return (cmd.ExecuteNonQuery());
+            }
+        }
+        
     }
 }

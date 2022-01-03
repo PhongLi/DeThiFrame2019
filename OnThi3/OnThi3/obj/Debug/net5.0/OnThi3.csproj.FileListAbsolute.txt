@@ -72,3 +72,4 @@ E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi3\OnThi3\obj\Debug\net5.0\OnThi
 E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi3\OnThi3\obj\Debug\net5.0\Razor\Views\BaoDuong\LietKeTheoSXe.cshtml.g.cs
 E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi3\OnThi3\obj\Debug\net5.0\Razor\Views\BaoDuong\ListBDtheoSXe.cshtml.g.cs
 E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi3\OnThi3\obj\Debug\net5.0\Razor\Views\BaoDuong\ViewInfoBD.cshtml.g.cs
+E:\UNIVERSITY\Nam3\framework\Thuchanh\OnThi\OnThi3\OnThi3\obj\Debug\net5.0\Razor\Views\BaoDuong\EditInfoBD.cshtml.g.cs

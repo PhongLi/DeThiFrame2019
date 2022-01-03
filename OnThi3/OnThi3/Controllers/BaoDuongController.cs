@@ -24,8 +24,28 @@ namespace OnThi3.Controllers
         {
             DataContext context = HttpContext.RequestServices.GetService(typeof(OnThi3.Models.DataContext)) as DataContext;
             return View(context.sqlViewInfoBD(MABD));
+
+        }
+        public IActionResult EditInfoBD(string MABD)
+        {
+            DataContext context = HttpContext.RequestServices.GetService(typeof(OnThi3.Models.DataContext)) as DataContext;
+            return View(context.sqlEditInfoBD(MABD));
+        }
+
+        public IActionResult DeleteCTBD(string MABD, string MACV)
+        {
+            DataContext context = HttpContext.RequestServices.GetService(typeof(OnThi3.Models.DataContext)) as DataContext;
+            context.sqlDeleteCTBD(MABD, MACV);
+            return RedirectToAction("LietKeTheoSXe");
+        }
+            public IActionResult updateBD(string MABD, string Ngaygiotra)
+            {
+                DataContext context = HttpContext.RequestServices.GetService(typeof(OnThi3.Models.DataContext)) as DataContext;
+            context.sqlupdateBD(MABD, Ngaygiotra);
+            return RedirectToAction("LietKeTheoSXe");
+
         }
 
 
-    }
+        }
 }
