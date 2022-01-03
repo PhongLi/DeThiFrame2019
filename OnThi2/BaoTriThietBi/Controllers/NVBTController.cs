@@ -36,8 +36,6 @@ namespace OnThi.Controllers
         {
 
             DataContext context = HttpContext.RequestServices.GetService(typeof(BaoTriThietBi.Models.DataContext)) as DataContext;
-            //NVBTModel nvbt =  ;
-            //ViewData.Model = nvbt;
             return View(context.sqlViewThietBi(MaNV, LanThu));
         }
     }
