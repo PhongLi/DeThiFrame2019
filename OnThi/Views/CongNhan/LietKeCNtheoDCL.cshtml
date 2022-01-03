@@ -1,8 +1,14 @@
 ﻿@model List<CongNhanModel>
 
 @{
+    var thanhtien = 0;
+    foreach (var item in Model) {
+        thanhtien += item.dongia;
+    }
 
 }
+
+
 <table border="1">
 
     <tr>
@@ -23,6 +29,7 @@
                 <a href="XoaCN?MaCN=@item.MaCongNhan">Xóa</a>
                 <a href="ViewInfoCN?MaCN=@item.MaCongNhan">View</a>
             </td>
+
 
         </tr>
     }

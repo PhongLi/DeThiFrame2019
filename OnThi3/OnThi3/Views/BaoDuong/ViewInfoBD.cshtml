@@ -1,0 +1,57 @@
+﻿@model List<Object>
+
+@{
+    var thanhtien = 0;
+    foreach (var item in Model)
+    {
+        thanhtien += (int)@item.GetType().GetProperty("DONGIA").GetValue(item, null);
+    }
+}
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                Ngày nhận xe <input type="date" name="NGAYGIONHAN" value="@item.GetType().GetProperty("NGAYGIONHAN").GetValue(item, null)" />               
+            </td>
+            <td>
+                Ngày trả xe <input type="date" name="NGAYGIOTRA" value="@item.GetType().GetProperty("NGAYGIOTRA").GetValue(item, null)" />
+            </td>
+        </tr>
+        break;
+    }
+
+    <tr>
+        <td>
+        </td>
+        <td>
+            Thành tiền <input type="text" name="thanhtien" value="@thanhtien" />
+        </td>
+    </tr>
+</table>
+
+<table border="1">
+    <tr>
+        <th>Tên Công việc</th>
+        <th>Đơn giá</th>
+        <th>Chức năng</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.GetType().GetProperty("TENCV").GetValue(item, null)
+            </td>
+            <td>
+                @item.GetType().GetProperty("DONGIA").GetValue(item, null)
+            </td>
+            <td>
+                <a href="">Xóa</a>
+            </td>
+        </tr>
+
+    }
+
+</table>

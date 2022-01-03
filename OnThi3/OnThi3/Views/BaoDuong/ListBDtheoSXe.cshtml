@@ -1,0 +1,44 @@
+﻿@model List<BaoDuongModel>
+
+    <table border="1">
+        <tr>
+            <th>Ngày giờ nhận</th>
+            <th>Ngày giờ trả</th>
+            <th>Số km</th>
+            <th>Nội dung</th>
+            <th>Chức năng</th>
+        </tr>
+
+        @foreach(var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @item.NGAYGIONHAN
+                    </td>
+                    <td>
+                        @item.NGAYGIOTRA
+                    </td>
+                    <td>
+                        @item.SOKM
+                    </td>
+                    <td>
+                        @item.SOXE
+                    </td>
+                    @if (string.IsNullOrEmpty(item.NGAYGIOTRA) == true)
+                    {
+                        <td>
+                            <a href="ViewInfoBD?MABD=@item.MABD">Xem</a>
+                            <a asp-action="EditInfoBD" asp-route-MABD="@item.MABD">Sửa</a>
+                        </td>
+                    }
+                    else { 
+                        <td>
+                            <a asp-action="ViewInfoBD" asp-route-MABD="@item.MABD">Xem</a>
+                            <span >Sửa</span>
+                        </td> 
+                    }
+    
+                </tr>
+            }
+    </table>

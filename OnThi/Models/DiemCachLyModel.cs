@@ -10,5 +10,6 @@ namespace OnThi.Models
         public string MaDiemCachLy { get; set; }
         public string TenDiemCachLy { get; set; }
         public string DiaChi { get; set; }
+
     }
 }
